@@ -40,3 +40,9 @@ post '/submit_post' do
   end
   redirect '/'
 end
+
+
+get '/delete/:id' do
+  Post.destroy(params[:id])
+  redirect '/'
+end
