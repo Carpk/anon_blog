@@ -28,12 +28,14 @@ post '/submit_post' do
 
     post.save
 
-    if params[:color]
+    if params[:tags]
 
-      tag_id = Tag.check_tag(params[:color])
+      tag_id = Tag.check_tag(params[:tags])
 
+      tag_id.each do |each_id|
       PostTag.create(post_id: post.id,
-                     tag_id: tag_id)
+                     tag_id: each_id)
+      end
     end
   end
   redirect '/'
