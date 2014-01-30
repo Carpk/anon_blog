@@ -19,6 +19,18 @@
 </head>
 <body>
   <a class='home_float'href="/">Home</a>
+
+  <div class='login_float'>
+    <% if session[:object] %>
+      Hello <%= session[:object][:name] %><br>
+    <a href="/logout">Log out</a>
+    <% else %>
+      <a href="/signin">Log in</a>
+      or
+      <a href="/signup">Sign up</a>
+    <% end %>
+  </div>
+
   <%= yield %>
 </body>
 </html>

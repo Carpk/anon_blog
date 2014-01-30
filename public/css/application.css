@@ -24,3 +24,9 @@ th {
   padding-left: 5px;
 
 }
+
+.login_float {
+  float: right;
+  font-size: 12px;
+  padding-right: 5px;
+}
