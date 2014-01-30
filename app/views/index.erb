@@ -1,14 +1,17 @@
 <div class="container">
   <h1>Welcome to Anon Blog!</h1>
   <p>Hello, anon! would you like to <a href='/create_post'>create a post</a>?</p>
-
+      <ul id='float_tags','no_bullets'>
+        <li>Tags:</li>
         <% @tags.each do |tag| %>
           <li><a href="/tags/<%=tag.id%>"><%= tag.tag %></a></li>
         <% end%>
+      </ul>
 
   <table>
     <div>
       <ul>
+        <li>Posts:</li>
         <% @posts.each do |post| %>
           <li><a href="/post/<%=post.id%>"><%= post.title %></a></li>
         <% end%>
